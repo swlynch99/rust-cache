@@ -1,1 +1,0 @@
-{"mappings":"AAAA,MAAM,4CAAU","sources":["node_modules/@octokit/endpoint/dist-src/version.js"],"sourcesContent":["const VERSION = \"9.0.5\";\nexport {\n  VERSION\n};\n"],"names":[],"version":3,"file":"version.af9da71e.js.map","sourceRoot":"../../"}

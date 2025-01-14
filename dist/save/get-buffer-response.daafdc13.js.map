@@ -1,1 +1,0 @@
-{"mappings":"AAAA,SAAS,yCAAkB,QAAQ;IACjC,OAAO,SAAS,WAAW;AAC7B","sources":["node_modules/@octokit/request/dist-src/get-buffer-response.js"],"sourcesContent":["function getBufferResponse(response) {\n  return response.arrayBuffer();\n}\nexport {\n  getBufferResponse as default\n};\n"],"names":[],"version":3,"file":"get-buffer-response.daafdc13.js.map","sourceRoot":"../../"}
