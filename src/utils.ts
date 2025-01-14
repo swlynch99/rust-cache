@@ -2,6 +2,7 @@ import * as core from "@actions/core";
 import * as exec from "@actions/exec";
 import * as buildjetCache from "@actions/buildjet-cache";
 import * as ghCache from "@actions/cache";
+import * as gcsCache from "@swlynch99/actions-cache-gcs";
 import fs from "fs";
 
 export function reportError(e: any) {
@@ -17,7 +18,7 @@ export function reportError(e: any) {
 export async function getCmdOutput(
   cmd: string,
   args: Array<string> = [],
-  options: exec.ExecOptions = {},
+  options: exec.ExecOptions = {}
 ): Promise<string> {
   let stdout = "";
   let stderr = "";
@@ -51,7 +52,19 @@ export interface CacheProvider {
 
 export function getCacheProvider(): CacheProvider {
   const cacheProvider = core.getInput("cache-provider");
-  const cache = cacheProvider === "github" ? ghCache : cacheProvider === "buildjet" ? buildjetCache : undefined;
+  let cache: typeof ghCache | undefined;
+
+  switch (cacheProvider) {
+    case "github":
+      cache = ghCache;
+      break;
+    case "buildjet":
+      cache = buildjetCache;
+      break;
+    case "gcs":
+      cache = gcsCache as typeof ghCache;
+      break;
+  }
 
   if (!cache) {
     throw new Error(`The \`cache-provider\` \`{cacheProvider}\` is not valid.`);
