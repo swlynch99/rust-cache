@@ -51,14 +51,12 @@
       "distDir": "dist/save",
       "source": "src/export/save/index.ts",
       "includeNodeModules": true,
-      "sourceMap": false,
       "optimize": false
     },
     "restore": {
       "distDir": "dist/restore",
       "source": "src/export/restore/index.ts",
       "includeNodeModules": true,
-      "sourceMap": false,
       "optimize": false
     }
   },
