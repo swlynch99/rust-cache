@@ -1,0 +1,1 @@
+require("./validate.5accfb0c.js"),new URL("validate.5accfb0c.js","file:"+__filename).toString();const e=[];for(let t=0;t<256;++t)e.push((t+256).toString(16).substr(1));

@@ -1,0 +1,1 @@
+require("node:os"),require("node:util"),require("node:process");

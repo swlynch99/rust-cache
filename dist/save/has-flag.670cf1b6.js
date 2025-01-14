@@ -1,0 +1,1 @@
+module.exports=(e,t=process.argv)=>{let r=e.startsWith("-")?"":1===e.length?"-":"--",s=t.indexOf(r+e),n=t.indexOf("--");return -1!==s&&(-1===n||s<n)};

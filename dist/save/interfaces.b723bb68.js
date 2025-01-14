@@ -1,0 +1,1 @@
+Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.XML_CHARKEY=module.exports.XML_ATTRKEY=void 0,module.exports.XML_ATTRKEY="$",module.exports.XML_CHARKEY="_";

@@ -1,0 +1,1 @@
+require("./lower-camel-case.38d394c2.js"),new URL("lower-camel-case.38d394c2.js","file:"+__filename).toString();

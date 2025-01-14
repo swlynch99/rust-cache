@@ -1,0 +1,5 @@
+require("./nodejs-common.a246b25c.js"),require("./build.551ec250.js");var e=globalThis,r={},t={},o=e.parcelRequire94c2;null==o&&((o=function(e){if(e in r)return r[e].exports;if(e in t){var o=t[e];delete t[e];var s={id:e,exports:{}};return r[e]=s,o.call(s.exports,s,s.exports),s.exports}var i=Error("Cannot find module '"+e+"'");throw i.code="MODULE_NOT_FOUND",i}).register=function(e,r){t[e]=r},e.parcelRequire94c2=o),o.register,Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.Channel=void 0;var s=o("7eqEc"),i=o("fifHe");class a extends s.ServiceObject{constructor(e,r,t){super({parent:e,baseUrl:"/channels",id:"",methods:{}}),this.metadata.id=r,this.metadata.resourceId=t}stop(e){e=e||s.util.noop,this.request({method:"POST",uri:"/stop",json:this.metadata},(r,t)=>{e(r,t)})}}module.exports.Channel=a,/*! Developer Documentation
+ *
+ * All async methods (except for streams) will return a Promise in the event
+ * that a callback is omitted.
+ */(0,i.promisifyAll)(a);

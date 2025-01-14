@@ -1,0 +1,1 @@
+module.exports=function(l,a,o,r){if(!l||!a||!l[a])throw Error("You must provide an object and a key for an existing method");r||(r=o,o={}),r=r||function(){},o.callthrough=o.callthrough||!1,o.calls=o.calls||0;var c=0===o.calls,t=l[a].bind(l);l[a]=function(){var n,u=[].slice.call(arguments);return o.callthrough&&(n=t.apply(l,u)),n=r.apply(l,u)||n,c||0!=--o.calls||(l[a]=t),n}};

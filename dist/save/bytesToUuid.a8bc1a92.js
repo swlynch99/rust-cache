@@ -1,0 +1,1 @@
+for(var r=[],o=0;o<256;++o)r[o]=(o+256).toString(16).substr(1);module.exports=function(o,t){var n=t||0;return[r[o[n++]],r[o[n++]],r[o[n++]],r[o[n++]],"-",r[o[n++]],r[o[n++]],"-",r[o[n++]],r[o[n++]],"-",r[o[n++]],r[o[n++]],"-",r[o[n++]],r[o[n++]],r[o[n++]],r[o[n++]],r[o[n++]],r[o[n++]]].join("")};

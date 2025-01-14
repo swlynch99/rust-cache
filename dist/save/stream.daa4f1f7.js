@@ -1,0 +1,1 @@
+var e=require("stream");module.exports=e;

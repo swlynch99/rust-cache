@@ -1,0 +1,1 @@
+require("./nodeHttpClient.8e2951dc.js"),new URL("nodeHttpClient.8e2951dc.js","file:"+__filename).toString();

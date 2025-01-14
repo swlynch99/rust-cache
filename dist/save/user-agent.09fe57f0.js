@@ -1,0 +1,1 @@
+require("./package.d8a085ab.js"),Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.getUserAgentString=void 0;var e={};e=new URL("package.d8a085ab.js","file:"+__filename).toString(),module.exports.getUserAgentString=function(){return`@actions/cache-${e.version}`};

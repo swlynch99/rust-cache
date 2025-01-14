@@ -1,0 +1,1 @@
+require("./stringify.2343bf7e.js"),require("./parse.487cb87c.js");var e=new URL("stringify.2343bf7e.js","file:"+__filename).toString().stringify,r={};r=new URL("parse.487cb87c.js","file:"+__filename).toString(),module.exports=function(i){return{parse:r(i),stringify:e}},module.exports.parse=r(),module.exports.stringify=e;

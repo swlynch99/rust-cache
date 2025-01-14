@@ -1,0 +1,1 @@
+require("./RedirectHandler.a7809b79.js");var e={};e=new URL("RedirectHandler.a7809b79.js","file:"+__filename).toString(),module.exports=function({maxRedirections:r}){return n=>function(i,t){let{maxRedirections:a=r}=i;if(!a)return n(i,t);let c=new e(n,a,i,t);return n(i={...i,maxRedirections:0},c)}};

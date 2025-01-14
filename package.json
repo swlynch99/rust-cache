@@ -32,12 +32,37 @@
     "smol-toml": "^1.3.0"
   },
   "devDependencies": {
+    "@parcel/bundler-library": "^2.13.3",
     "@types/node": "^22.7.5",
     "@vercel/ncc": "^0.38.2",
     "linefix": "^0.1.1",
+    "parcel": "^2.13.3",
+    "rimraf": "^6.0.1",
     "typescript": "5.7.2"
   },
   "scripts": {
-    "prepare": "ncc build --target es2020 -o dist/restore src/restore.ts && ncc build --target es2020 -o dist/save src/save.ts && linefix dist"
+    "prebuild": "rimraf dist",
+    "build": "parcel build",
+    "prepare": "npm run build",
+    "prepare-old": "ncc build --target es2020 -o dist/restore src/restore.ts && ncc build --target es2020 -o dist/save src/save.ts && linefix dist"
+  },
+  "targets": {
+    "save": {
+      "distDir": "dist/save",
+      "source": "src/export/save/index.ts",
+      "includeNodeModules": true,
+      "sourceMap": false,
+      "optimize": true
+    },
+    "restore": {
+      "distDir": "dist/restore",
+      "source": "src/export/restore/index.ts",
+      "includeNodeModules": true,
+      "sourceMap": false,
+      "optimize": true
+    }
+  },
+  "engines": {
+    "node": ">= 20"
   }
 }

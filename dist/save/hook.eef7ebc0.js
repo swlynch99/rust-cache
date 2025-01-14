@@ -1,0 +1,1 @@
+require("./with-authorization-prefix.38d394c2.js"),new URL("with-authorization-prefix.38d394c2.js","file:"+__filename).toString();

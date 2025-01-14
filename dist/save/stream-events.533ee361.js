@@ -1,0 +1,1 @@
+require("./stubs.8361a720.js");var e={};e=new URL("stubs.8361a720.js","file:"+__filename).toString(),module.exports=function(i){var r={callthrough:!0,calls:1};return e(i=i||this,"_read",r,i.emit.bind(i,"reading")),e(i,"_write",r,i.emit.bind(i,"writing")),i};

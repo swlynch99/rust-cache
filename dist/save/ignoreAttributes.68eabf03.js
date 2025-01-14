@@ -1,0 +1,1 @@
+module.exports=function(t){return"function"==typeof t?t:Array.isArray(t)?r=>{for(let e of t)if("string"==typeof e&&r===e||e instanceof RegExp&&e.test(r))return!0}:()=>!1};

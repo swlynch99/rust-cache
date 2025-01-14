@@ -1,0 +1,1 @@
+module.exports=function(r,i,e){if(!r||void 0===r[i]||null===r[i])return e;if("number"!=typeof r[i]||isNaN(r[i]))throw TypeError("Limit "+i+" is not a valid number");return r[i]};

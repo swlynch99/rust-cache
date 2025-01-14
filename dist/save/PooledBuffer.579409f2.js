@@ -1,0 +1,1 @@
+require("./BuffersStream.21efdf2f.js");var e=require("buffer");new URL("BuffersStream.21efdf2f.js","file:"+__filename).toString(),(e&&e.__esModule?e.default:e).constants.MAX_LENGTH;

@@ -1,0 +1,1 @@
+Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.IAMAuth=void 0,module.exports.IAMAuth=class{constructor(e,t){this.selector=e,this.token=t,this.selector=e,this.token=t}getRequestHeaders(){return{"x-goog-iam-authority-selector":this.selector,"x-goog-iam-authorization-token":this.token}}};

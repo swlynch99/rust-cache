@@ -1,0 +1,1 @@
+require("./sign-stream.fcf45bc4.js"),require("./verify-stream.de256bf9.js");var e={};e=new URL("sign-stream.fcf45bc4.js","file:"+__filename).toString();var i={};i=new URL("verify-stream.de256bf9.js","file:"+__filename).toString(),e.sign,i.verify,i.decode,i.isValid;

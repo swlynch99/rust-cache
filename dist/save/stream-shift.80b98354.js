@@ -1,0 +1,1 @@
+module.exports=function(e){var r=e._readableState;return r?r.objectMode||"number"==typeof e._duplexState?e.read():e.read(function(e){if(e.buffer.length){var r=e.bufferIndex||0;if(e.buffer.head)return e.buffer.head.data.length;if(e.buffer.length-r>0&&e.buffer[r])return e.buffer[r].length}return e.length}(r)):null};

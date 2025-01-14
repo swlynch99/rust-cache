@@ -1,0 +1,1 @@
+Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.terminalStates=module.exports.POLL_INTERVAL_IN_MS=void 0,module.exports.POLL_INTERVAL_IN_MS=2e3,module.exports.terminalStates=["succeeded","canceled","failed"];
