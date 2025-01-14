@@ -1,1 +1,0 @@
-var e;Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.MatchKind=void 0,(e=module.exports.MatchKind||(module.exports.MatchKind={}))[e.None=0]="None",e[e.Directory=1]="Directory",e[e.File=2]="File",e[e.All=3]="All";

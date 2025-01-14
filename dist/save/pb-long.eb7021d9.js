@@ -1,0 +1,178 @@
+require("./goog-varint.005cc470.js");
+
+var $4e5b4780f4cefed9$exports = {};
+$4e5b4780f4cefed9$exports = new URL("goog-varint.005cc470.js", "file:" + __filename).toString();
+
+
+let $aa5b75069185127f$var$BI;
+function $aa5b75069185127f$export$e21a0a1962dae197() {
+    const dv = new DataView(new ArrayBuffer(8));
+    const ok = globalThis.BigInt !== undefined && typeof dv.getBigInt64 === "function" && typeof dv.getBigUint64 === "function" && typeof dv.setBigInt64 === "function" && typeof dv.setBigUint64 === "function";
+    $aa5b75069185127f$var$BI = ok ? {
+        MIN: BigInt("-9223372036854775808"),
+        MAX: BigInt("9223372036854775807"),
+        UMIN: BigInt("0"),
+        UMAX: BigInt("18446744073709551615"),
+        C: BigInt,
+        V: dv
+    } : undefined;
+}
+$aa5b75069185127f$export$e21a0a1962dae197();
+function $aa5b75069185127f$var$assertBi(bi) {
+    if (!bi) throw new Error("BigInt unavailable, see https://github.com/timostamm/protobuf-ts/blob/v1.0.8/MANUAL.md#bigint-support");
+}
+// used to validate from(string) input (when bigint is unavailable)
+const $aa5b75069185127f$var$RE_DECIMAL_STR = /^-?[0-9]+$/;
+// constants for binary math
+const $aa5b75069185127f$var$TWO_PWR_32_DBL = 0x100000000;
+const $aa5b75069185127f$var$HALF_2_PWR_32 = 0x080000000;
+// base class for PbLong and PbULong provides shared code
+class $aa5b75069185127f$var$SharedPbLong {
+    /**
+     * Create a new instance with the given bits.
+     */ constructor(lo, hi){
+        this.lo = lo | 0;
+        this.hi = hi | 0;
+    }
+    /**
+     * Is this instance equal to 0?
+     */ isZero() {
+        return this.lo == 0 && this.hi == 0;
+    }
+    /**
+     * Convert to a native number.
+     */ toNumber() {
+        let result = this.hi * $aa5b75069185127f$var$TWO_PWR_32_DBL + (this.lo >>> 0);
+        if (!Number.isSafeInteger(result)) throw new Error("cannot convert to safe number");
+        return result;
+    }
+}
+class $aa5b75069185127f$export$2d16819998fb891c extends $aa5b75069185127f$var$SharedPbLong {
+    /**
+     * Create instance from a `string`, `number` or `bigint`.
+     */ static from(value) {
+        if ($aa5b75069185127f$var$BI) // noinspection FallThroughInSwitchStatementJS
+        switch(typeof value){
+            case "string":
+                if (value == "0") return this.ZERO;
+                if (value == "") throw new Error('string is no integer');
+                value = $aa5b75069185127f$var$BI.C(value);
+            case "number":
+                if (value === 0) return this.ZERO;
+                value = $aa5b75069185127f$var$BI.C(value);
+            case "bigint":
+                if (!value) return this.ZERO;
+                if (value < $aa5b75069185127f$var$BI.UMIN) throw new Error('signed value for ulong');
+                if (value > $aa5b75069185127f$var$BI.UMAX) throw new Error('ulong too large');
+                $aa5b75069185127f$var$BI.V.setBigUint64(0, value, true);
+                return new $aa5b75069185127f$export$2d16819998fb891c($aa5b75069185127f$var$BI.V.getInt32(0, true), $aa5b75069185127f$var$BI.V.getInt32(4, true));
+        }
+        else switch(typeof value){
+            case "string":
+                if (value == "0") return this.ZERO;
+                value = value.trim();
+                if (!$aa5b75069185127f$var$RE_DECIMAL_STR.test(value)) throw new Error('string is no integer');
+                let [minus, lo, hi] = (0, $4e5b4780f4cefed9$exports.int64fromString)(value);
+                if (minus) throw new Error('signed value for ulong');
+                return new $aa5b75069185127f$export$2d16819998fb891c(lo, hi);
+            case "number":
+                if (value == 0) return this.ZERO;
+                if (!Number.isSafeInteger(value)) throw new Error('number is no integer');
+                if (value < 0) throw new Error('signed value for ulong');
+                return new $aa5b75069185127f$export$2d16819998fb891c(value, value / $aa5b75069185127f$var$TWO_PWR_32_DBL);
+        }
+        throw new Error('unknown value ' + typeof value);
+    }
+    /**
+     * Convert to decimal string.
+     */ toString() {
+        return $aa5b75069185127f$var$BI ? this.toBigInt().toString() : (0, $4e5b4780f4cefed9$exports.int64toString)(this.lo, this.hi);
+    }
+    /**
+     * Convert to native bigint.
+     */ toBigInt() {
+        $aa5b75069185127f$var$assertBi($aa5b75069185127f$var$BI);
+        $aa5b75069185127f$var$BI.V.setInt32(0, this.lo, true);
+        $aa5b75069185127f$var$BI.V.setInt32(4, this.hi, true);
+        return $aa5b75069185127f$var$BI.V.getBigUint64(0, true);
+    }
+}
+/**
+ * ulong 0 singleton.
+ */ $aa5b75069185127f$export$2d16819998fb891c.ZERO = new $aa5b75069185127f$export$2d16819998fb891c(0, 0);
+class $aa5b75069185127f$export$458c11e435f8bbac extends $aa5b75069185127f$var$SharedPbLong {
+    /**
+     * Create instance from a `string`, `number` or `bigint`.
+     */ static from(value) {
+        if ($aa5b75069185127f$var$BI) // noinspection FallThroughInSwitchStatementJS
+        switch(typeof value){
+            case "string":
+                if (value == "0") return this.ZERO;
+                if (value == "") throw new Error('string is no integer');
+                value = $aa5b75069185127f$var$BI.C(value);
+            case "number":
+                if (value === 0) return this.ZERO;
+                value = $aa5b75069185127f$var$BI.C(value);
+            case "bigint":
+                if (!value) return this.ZERO;
+                if (value < $aa5b75069185127f$var$BI.MIN) throw new Error('signed long too small');
+                if (value > $aa5b75069185127f$var$BI.MAX) throw new Error('signed long too large');
+                $aa5b75069185127f$var$BI.V.setBigInt64(0, value, true);
+                return new $aa5b75069185127f$export$458c11e435f8bbac($aa5b75069185127f$var$BI.V.getInt32(0, true), $aa5b75069185127f$var$BI.V.getInt32(4, true));
+        }
+        else switch(typeof value){
+            case "string":
+                if (value == "0") return this.ZERO;
+                value = value.trim();
+                if (!$aa5b75069185127f$var$RE_DECIMAL_STR.test(value)) throw new Error('string is no integer');
+                let [minus, lo, hi] = (0, $4e5b4780f4cefed9$exports.int64fromString)(value);
+                if (minus) {
+                    if (hi > $aa5b75069185127f$var$HALF_2_PWR_32 || hi == $aa5b75069185127f$var$HALF_2_PWR_32 && lo != 0) throw new Error('signed long too small');
+                } else if (hi >= $aa5b75069185127f$var$HALF_2_PWR_32) throw new Error('signed long too large');
+                let pbl = new $aa5b75069185127f$export$458c11e435f8bbac(lo, hi);
+                return minus ? pbl.negate() : pbl;
+            case "number":
+                if (value == 0) return this.ZERO;
+                if (!Number.isSafeInteger(value)) throw new Error('number is no integer');
+                return value > 0 ? new $aa5b75069185127f$export$458c11e435f8bbac(value, value / $aa5b75069185127f$var$TWO_PWR_32_DBL) : new $aa5b75069185127f$export$458c11e435f8bbac(-value, -value / $aa5b75069185127f$var$TWO_PWR_32_DBL).negate();
+        }
+        throw new Error('unknown value ' + typeof value);
+    }
+    /**
+     * Do we have a minus sign?
+     */ isNegative() {
+        return (this.hi & $aa5b75069185127f$var$HALF_2_PWR_32) !== 0;
+    }
+    /**
+     * Negate two's complement.
+     * Invert all the bits and add one to the result.
+     */ negate() {
+        let hi = ~this.hi, lo = this.lo;
+        if (lo) lo = ~lo + 1;
+        else hi += 1;
+        return new $aa5b75069185127f$export$458c11e435f8bbac(lo, hi);
+    }
+    /**
+     * Convert to decimal string.
+     */ toString() {
+        if ($aa5b75069185127f$var$BI) return this.toBigInt().toString();
+        if (this.isNegative()) {
+            let n = this.negate();
+            return '-' + (0, $4e5b4780f4cefed9$exports.int64toString)(n.lo, n.hi);
+        }
+        return (0, $4e5b4780f4cefed9$exports.int64toString)(this.lo, this.hi);
+    }
+    /**
+     * Convert to native bigint.
+     */ toBigInt() {
+        $aa5b75069185127f$var$assertBi($aa5b75069185127f$var$BI);
+        $aa5b75069185127f$var$BI.V.setInt32(0, this.lo, true);
+        $aa5b75069185127f$var$BI.V.setInt32(4, this.hi, true);
+        return $aa5b75069185127f$var$BI.V.getBigInt64(0, true);
+    }
+}
+/**
+ * long 0 singleton.
+ */ $aa5b75069185127f$export$458c11e435f8bbac.ZERO = new $aa5b75069185127f$export$458c11e435f8bbac(0, 0);
+
+

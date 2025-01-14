@@ -1,1 +1,0 @@
-for(var r=[],e=[],t=("undefined"!=typeof Uint8Array&&Uint8Array,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"),a=0,d=t.length;a<d;++a)r[a]=t[a],e[t.charCodeAt(a)]=a;e["-".charCodeAt(0)]=62,e["_".charCodeAt(0)]=63;

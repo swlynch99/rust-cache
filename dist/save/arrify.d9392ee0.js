@@ -1,1 +1,0 @@
-module.exports=r=>null==r?[]:Array.isArray(r)?r:"string"==typeof r?[r]:"function"==typeof r[Symbol.iterator]?[...r]:[r];

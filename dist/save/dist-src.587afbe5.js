@@ -1,1 +1,0 @@
-function e(e){return e&&e.__esModule?e.default:e}require("./dist-web.38d394c2.js"),require("./once.30bf9d1f.js"),new URL("dist-web.38d394c2.js","file:"+__filename).toString();var n={};e(n=new URL("once.30bf9d1f.js","file:"+__filename).toString())(e=>console.warn(e)),e(n)(e=>console.warn(e));

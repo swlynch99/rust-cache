@@ -1,1 +1,0 @@
-let e="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split(""),t=[];for(let d=0;d<e.length;d++)t[e[d].charCodeAt(0)]=d;t["-".charCodeAt(0)]=e.indexOf("+"),t["_".charCodeAt(0)]=e.indexOf("/");

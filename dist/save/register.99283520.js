@@ -1,1 +1,0 @@
-module.exports=function r(e,n,o,t){if("function"!=typeof o)throw Error("method for before hook must be a function");return(t||(t={}),Array.isArray(n))?n.reverse().reduce(function(n,o){return r.bind(null,e,o,n,t)},o)():Promise.resolve().then(function(){return e.registry[n]?e.registry[n].reduce(function(r,e){return e.hook.bind(null,r,t)},o)():o(t)})};

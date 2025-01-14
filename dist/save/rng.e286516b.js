@@ -1,1 +1,0 @@
-var r=require("crypto");module.exports=function(){return r.randomBytes(16)};

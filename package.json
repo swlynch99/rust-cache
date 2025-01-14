@@ -52,14 +52,14 @@
       "source": "src/export/save/index.ts",
       "includeNodeModules": true,
       "sourceMap": false,
-      "optimize": true
+      "optimize": false
     },
     "restore": {
       "distDir": "dist/restore",
       "source": "src/export/restore/index.ts",
       "includeNodeModules": true,
       "sourceMap": false,
-      "optimize": true
+      "optimize": false
     }
   },
   "engines": {

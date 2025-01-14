@@ -1,1 +1,0 @@
-module.exports=class{constructor(t){this.tagname=t,this.child=[],this[":@"]={}}add(t,h){"__proto__"===t&&(t="#__proto__"),this.child.push({[t]:h})}addChild(t){"__proto__"===t.tagname&&(t.tagname="#__proto__"),t[":@"]&&Object.keys(t[":@"]).length>0?this.child.push({[t.tagname]:t.child,":@":t[":@"]}):this.child.push({[t.tagname]:t.child})}};

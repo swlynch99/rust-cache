@@ -1,1 +1,0 @@
-require("./mappingTable.cfc76109.js"),require("punycode");var e={};e=new URL("mappingTable.cfc76109.js","file:"+__filename).toString();var a=/[\uD800-\uDBFF][\uDC00-\uDFFF]/g;

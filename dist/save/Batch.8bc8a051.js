@@ -1,1 +1,0 @@
-var r,o;require("events"),(o=r||(r={}))[o.Good=0]="Good",o[o.Error=1]="Error";

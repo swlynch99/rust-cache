@@ -1,1 +1,0 @@
-require("./AvroReadableFromStream.d4f61c86.js"),require("./AvroReader.2ecf25ef.js");var e=require("stream");new URL("AvroReadableFromStream.d4f61c86.js","file:"+__filename).toString();new URL("AvroReader.2ecf25ef.js","file:"+__filename).toString(),e.Readable;

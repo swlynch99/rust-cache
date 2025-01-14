@@ -1,1 +1,0 @@
-require("./fetch-wrapper.3a25db42.js"),new URL("fetch-wrapper.3a25db42.js","file:"+__filename).toString();

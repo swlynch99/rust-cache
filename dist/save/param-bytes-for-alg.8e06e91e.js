@@ -1,1 +1,0 @@
-function r(r){return(r/8|0)+(r%8==0?0:1)}var n={ES256:r(256),ES384:r(384),ES512:r(521)};module.exports=function(r){var o=n[r];if(o)return o;throw Error('Unknown algorithm "'+r+'"')};

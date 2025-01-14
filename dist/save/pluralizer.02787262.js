@@ -1,1 +1,0 @@
-const s={pronoun:"it",is:"is",was:"was",this:"this"},t={pronoun:"they",is:"are",was:"were",this:"these"};module.exports=class{constructor(s,t){this.singular=s,this.plural=t}pluralize(i){let r=1===i,n=r?this.singular:this.plural;return{...r?s:t,count:i,noun:n}}};

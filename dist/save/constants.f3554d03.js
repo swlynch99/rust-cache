@@ -1,1 +1,0 @@
-module.exports={maxAttributeValueSize:1024,maxNameValuePairSize:4096};

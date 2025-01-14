@@ -1,1 +1,0 @@
-module.exports=function(r,i,e){if(r.registry[i]){var t=r.registry[i].map(function(r){return r.orig}).indexOf(e);-1!==t&&r.registry[i].splice(t,1)}};

@@ -1,1 +1,0 @@
-require("./is-plain-object.38d394c2.js"),new URL("is-plain-object.38d394c2.js","file:"+__filename).toString();

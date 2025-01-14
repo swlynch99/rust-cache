@@ -1,1 +1,0 @@
-const e=Buffer.allocUnsafe(0);module.exports={uid:"258EAFA5-E914-47DA-95CA-C5AB0DC85B11",staticPropertyDescriptors:{enumerable:!0,writable:!1,configurable:!1},states:{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3},opcodes:{CONTINUATION:0,TEXT:1,BINARY:2,CLOSE:8,PING:9,PONG:10},maxUnsigned16Bit:65535,parserStates:{INFO:0,PAYLOADLENGTH_16:2,PAYLOADLENGTH_64:3,READ_DATA:4},emptyBuffer:e};

@@ -1,1 +1,0 @@
-require("./validate.c04748dc.js"),new URL("validate.c04748dc.js","file:"+__filename).toString();const e=[];for(let b=0;b<256;++b)e.push((b+256).toString(16).slice(1));

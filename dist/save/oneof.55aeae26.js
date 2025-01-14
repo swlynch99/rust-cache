@@ -1,0 +1,61 @@
+/**
+ * Is the given value a valid oneof group?
+ *
+ * We represent protobuf `oneof` as algebraic data types (ADT) in generated
+ * code. But when working with messages of unknown type, the ADT does not
+ * help us.
+ *
+ * This type guard checks if the given object adheres to the ADT rules, which
+ * are as follows:
+ *
+ * 1) Must be an object.
+ *
+ * 2) Must have a "oneofKind" discriminator property.
+ *
+ * 3) If "oneofKind" is `undefined`, no member field is selected. The object
+ * must not have any other properties.
+ *
+ * 4) If "oneofKind" is a `string`, the member field with this name is
+ * selected.
+ *
+ * 5) If a member field is selected, the object must have a second property
+ * with this name. The property must not be `undefined`.
+ *
+ * 6) No extra properties are allowed. The object has either one property
+ * (no selection) or two properties (selection).
+ *
+ */ function $57b7192b649e9ca8$export$dcaa6868190faa1b(any) {
+    if (typeof any != 'object' || any === null || !any.hasOwnProperty('oneofKind')) return false;
+    switch(typeof any.oneofKind){
+        case "string":
+            if (any[any.oneofKind] === undefined) return false;
+            return Object.keys(any).length == 2;
+        case "undefined":
+            return Object.keys(any).length == 1;
+        default:
+            return false;
+    }
+}
+function $57b7192b649e9ca8$export$7a91ad8ad738cbfa(oneof, kind) {
+    return oneof[kind];
+}
+function $57b7192b649e9ca8$export$429eba4cfebddb3f(oneof, kind, value) {
+    if (oneof.oneofKind !== undefined) delete oneof[oneof.oneofKind];
+    oneof.oneofKind = kind;
+    if (value !== undefined) oneof[kind] = value;
+}
+function $57b7192b649e9ca8$export$b53620574aab7d1b(oneof, kind, value) {
+    if (oneof.oneofKind !== undefined) delete oneof[oneof.oneofKind];
+    oneof.oneofKind = kind;
+    if (value !== undefined && kind !== undefined) oneof[kind] = value;
+}
+function $57b7192b649e9ca8$export$4e2f7a1f2c45f42a(oneof) {
+    if (oneof.oneofKind !== undefined) delete oneof[oneof.oneofKind];
+    oneof.oneofKind = undefined;
+}
+function $57b7192b649e9ca8$export$448d0647af41b287(oneof) {
+    if (oneof.oneofKind === undefined) return undefined;
+    return oneof[oneof.oneofKind];
+}
+
+

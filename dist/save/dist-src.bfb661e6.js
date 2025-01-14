@@ -1,1 +1,0 @@
-require("./version.38d394c2.js"),require("./endpoints-to-methods.9c571962.js");var e={};e=new URL("version.38d394c2.js","file:"+__filename).toString();new URL("endpoints-to-methods.9c571962.js","file:"+__filename).toString(),e.VERSION,e.VERSION;

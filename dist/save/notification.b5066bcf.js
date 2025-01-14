@@ -1,5 +1,0 @@
-require("./nodejs-common.a246b25c.js"),require("./build.551ec250.js");var e=globalThis,r={},t={},o=e.parcelRequire94c2;null==o&&((o=function(e){if(e in r)return r[e].exports;if(e in t){var o=t[e];delete t[e];var i={id:e,exports:{}};return r[e]=i,o.call(i.exports,i,i.exports),i.exports}var s=Error("Cannot find module '"+e+"'");throw s.code="MODULE_NOT_FOUND",s}).register=function(e,r){t[e]=r},e.parcelRequire94c2=o),o.register,Object.defineProperty(module.exports,"__esModule",{value:!0}),module.exports.Notification=void 0;var i=o("7eqEc"),s=o("fifHe");class c extends i.ServiceObject{constructor(e,r){let t={};super({parent:e,baseUrl:"/notificationConfigs",id:r.toString(),createMethod:e.createNotification.bind(e),methods:{create:!0,delete:{reqOpts:{qs:t}},get:{reqOpts:{qs:t}},getMetadata:{reqOpts:{qs:t}},exists:!0}})}}module.exports.Notification=c,/*! Developer Documentation
- *
- * All async methods (except for streams) will return a Promise in the event
- * that a callback is omitted.
- */(0,s.promisifyAll)(c);

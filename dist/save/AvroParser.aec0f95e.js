@@ -1,1 +1,0 @@
-var n,N,o,O;(o=n||(n={})).RECORD="record",o.ENUM="enum",o.ARRAY="array",o.MAP="map",o.UNION="union",o.FIXED="fixed",(O=N||(N={})).NULL="null",O.BOOLEAN="boolean",O.INT="int",O.LONG="long",O.FLOAT="float",O.DOUBLE="double",O.BYTES="bytes",O.STRING="string";

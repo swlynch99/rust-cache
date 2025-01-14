@@ -1,1 +1,0 @@
-require("./StorageBrowserPolicy.bf1d1ed9.js"),new URL("StorageBrowserPolicy.bf1d1ed9.js","file:"+__filename).toString();

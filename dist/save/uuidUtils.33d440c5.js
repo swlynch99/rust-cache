@@ -1,1 +1,0 @@
-var o,l=require("crypto");"function"==typeof(null===(o=null==globalThis?void 0:globalThis.crypto)||void 0===o?void 0:o.randomUUID)?globalThis.crypto.randomUUID.bind(globalThis.crypto):l.randomUUID;

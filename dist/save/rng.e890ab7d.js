@@ -1,1 +1,0 @@
-require("crypto"),new Uint8Array(256).length;

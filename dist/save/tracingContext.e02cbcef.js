@@ -1,1 +1,0 @@
-Symbol.for("@azure/core-tracing span"),Symbol.for("@azure/core-tracing namespace");

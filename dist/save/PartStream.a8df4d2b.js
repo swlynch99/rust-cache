@@ -1,1 +1,0 @@
-var e=require("node:util"),r=require("node:stream"),t=e.inherits,i=r.Readable;function o(e){i.call(this,e)}t(o,i),o.prototype._read=function(e){},module.exports=o;

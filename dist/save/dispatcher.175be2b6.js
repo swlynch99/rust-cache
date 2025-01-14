@@ -1,1 +1,0 @@
-var e=require("events");module.exports=class extends e{dispatch(){throw Error("not implemented")}close(){throw Error("not implemented")}destroy(){throw Error("not implemented")}};
